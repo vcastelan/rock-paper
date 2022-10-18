@@ -28,18 +28,30 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
-  }
-   
+    let tie = "Its a tie you selected" + playerSelection + "and computer selected" + computerSelection;
+    let paperBeatRock = "You win! You selected" + playerSelection + "and computer selected" + computerSelection;
+    let scissorsBeatPaper = "You win! You selected" + playerSelection + "and computer selected" + computerSelection;
+    let rockBeatScissors = "You win! You selected" + playerSelection + "and computer selected" + computerSelection;
+    let scissorsBeatRockLoss = "You lose, you selected" + playerSelection + "and computer choose" + computerSelection;
+    let rockBeatPaperloss = "You lose, you selected" + playerSelection + "and computer choose" + computerSelection;
+    let paperBeatScissorsLoss = "You lose, you selected" + playerSelection + "and computer choose" + computerSelection;
+
+    if (playerSelection === computerSelection) {
+        return tie;
+    } else if ((playerSelection === "Paper") && (computerSelection === "Rock")) {
+        return paperBeatRock;
+    } else if ((playerSelection === "Scissors") && (computerSelection === "Paper")) {
+        return scissorsBeatPaper;
+    } else if ((playerSelection === "Rock") && (computerSelection === "Scissors")) {
+        return rockBeatScissors;
+    } else if ((playerSelection === "Scissors") && (computerSelection === "Rock")) {
+        return scissorsBeatRockLoss;
+    } else if ((playerSelection === "Rock") && (computerSelection === "Paper")) {
+        return rockBeatPaperloss;
+    } else if ((playerSelection === "Paper") && (computerSelection === "Scissors")) {
+        return paperBeatScissorsLoss;  
+    }
+}
   const playerSelection = "rock";
   const computerSelection = getComputerChoice();
   console.log(playRound(playerSelection, computerSelection));
-
-
-//Write a NEW function called game(). Call the playRound function inside of this one 
-//to play a 5 round game that keeps score and reports a winner or loser at the end
-
-for (let i = 0; i < 5; i++) {
-    // your code here!
- }
-
- //you should be using console.log() to display the results of each round and the winner at the end.
